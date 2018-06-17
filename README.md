@@ -8,9 +8,17 @@ This is a ZSH plugin for [jabba](https://github.com/shyiko/jabba). Together with
 * `install`
 * `uninstall`
 
-## Instalation
+## Installation
 
-If using [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) clone this repository to `~/.oh-my-zsh/custom/plugins`.
+### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-This plugin can also be installed automatically by using [antibody](https://getantibody.github.io/).
+Clone this repository to `~/.oh-my-zsh/custom/plugins`.
 
+### [antibody](https://getantibody.github.io/)
+
+Add this plugin to the antibody plugins file. Also make sure that the completion functionality in enabled in your `.zshrc` file:
+
+```bash
+autoload -U compinit
+compinit
+```
