@@ -2,7 +2,7 @@
 
 jabba() {
   local fd3=$(mktemp /tmp/jabba-fd3.XXXXXX)
-  (JABBA_SHELL_INTEGRATION=ON /usr/bin/jabba "$@" 3>| ${fd3})
+  (JABBA_SHELL_INTEGRATION=ON /usr/bin/env jabba "$@" 3>| ${fd3})
   local exit_code=$?
   eval $(cat ${fd3})
   rm -f ${fd3}

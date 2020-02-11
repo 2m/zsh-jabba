@@ -12,7 +12,8 @@ This is a ZSH plugin for [jabba](https://github.com/shyiko/jabba). Together with
 
 ### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-Clone this repository to `~/.oh-my-zsh/custom/plugins`.
+* Clone this repository to `~/.oh-my-zsh/custom/plugins`.
+* Add `zsh-jabba` to the plugin list in `~/.zshrc`
 
 ### [antibody](https://getantibody.github.io/)
 
