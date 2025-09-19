@@ -21,6 +21,17 @@ _jabba_get_available_list () {
   $_comp_command1 ls-remote
 }
 
+_jabba_get_alias_list () {
+  local pattern="^.*Alias Name: ([a-zA-Z0-9]+) Content:.*$"
+  local output=$($_comp_command1 ls-alias)
+
+  for line in ${(f)output}; do
+    if [[ "$line" =~ "$pattern" ]]; then
+      echo ${match[1]}
+    fi
+  done
+}
+
 _jabba () {
   local curcontext="$curcontext" state line
   typeset -A opt_args
@@ -43,6 +54,12 @@ _jabba () {
           ;;
         uninstall)
           compadd $(_jabba_get_installed_list)
+          ;;
+        alias)
+          compadd $(_jabba_get_alias_list)
+          ;;
+        unalias)
+          compadd $(_jabba_get_alias_list)
           ;;
       esac
       ;;
