@@ -14,7 +14,7 @@ _jabba_get_command_list () {
 }
 
 _jabba_get_installed_list () {
-  $_comp_command1 ls
+  $_comp_command1 ls | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?[mGK]//g" | sed -r "s/\*$//g"
 }
 
 _jabba_get_available_list () {
